@@ -1,6 +1,7 @@
 .main-navigation {
-	display: block;
+	display: flex;
 	width: 100%;
+	justify-content: end;
 
 	ul {
 		display: none;
@@ -51,6 +52,13 @@
 
 	li {
 		position: relative;
+		padding-left: 0.8em;
+		padding-right: 0.8em;
+
+		a {
+			font-weight: bold;
+		}
+		
 
 		&:hover > a,
 		&.focus > a {

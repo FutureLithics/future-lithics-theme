@@ -4,13 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _s
+ * @package Future_Lithics
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<!-- <pre><?php var_dump(get_stylesheet_uri()); ?></pre> -->
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -22,14 +23,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				_s_posted_on();
-				_s_posted_by();
+				future_lithics_posted_on();
+				future_lithics_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php _s_post_thumbnail(); ?>
+	<?php future_lithics_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +38,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'future-lithics' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +51,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'future-lithics' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +59,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php _s_entry_footer(); ?>
+		<?php future_lithics_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
