@@ -25,8 +25,8 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'future-lithics' ); ?></a>
 
-	<header id="masthead" class="site-header d-flex justify-content-between align-items-center p-4">
-		<div class="site-branding">
+	<header id="masthead" class="site-header row flex-inline align-items-center p-4">
+		<div class="col-md-4 site-branding">
 			<div class="logo-container">
 			<?php
 			    the_custom_logo();
@@ -50,7 +50,7 @@
 			<?php endif; endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
+		<nav id="site-navigation" class="main-navigation col-md-8">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'future-lithics' ); ?></button>
 			<?php
 			wp_nav_menu(

@@ -79,6 +79,7 @@ body {
  */
 main {
 	display: block;
+	min-height: 70vh;
 }
 
 /**
@@ -622,6 +623,74 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site {
+	display: grid;
+	grid-template-columns: auto 25%;
+	grid-template-areas: "header header" "main sidebar" "footer footer";
+}
+
+.site-header {
+	grid-area: header;
+}
+
+.site-main {
+	grid-area: main;
+	overflow: hidden;
+	/* Resolves issue with <pre> elements forcing full width. */
+}
+
+.widget-area {
+	grid-area: sidebar;
+}
+
+.site-footer {
+	grid-area: footer;
+}
+
+aside#secondary {
+	background-color: #F5F5F5;
+	padding: 1.5em 0.5em;
+	max-width: 320px;
+}
+
+.no-sidebar .site {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas: "header" "main" "footer";
+}
+
+.wp-block-search__inside-wrapper {
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.wp-block-search__inside-wrapper .wp-block-search__input {
+	border-radius: 0px !important;
+	height: 2rem;
+	border: 0;
+	outline: 0;
+	box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.25);
+	padding: 0.4rem;
+	font-size: 0.75rem;
+}
+
+.wp-block-search__inside-wrapper .wp-block-search__input::placeholder {
+	font-style: oblique;
+}
+
+.wp-block-search__inside-wrapper .wp-block-search__button {
+	border-radius: 0px !important;
+	height: 2rem;
+	width: 2rem;
+	margin-left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFAD0F;
+	color: white;
+	padding: 0px;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -629,7 +698,6 @@ textarea {
 --------------------------------------------- */
 .main-navigation {
 	display: flex;
-	width: 100%;
 	justify-content: end;
 }
 
@@ -732,7 +800,7 @@ textarea {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 1.5em;
 }
 
 .updated:not(.published) {
@@ -750,13 +818,34 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.site-footer {
+	width: 100vw;
+	position: absolute;
+	bottom: 0px;
+	background-color: #414141;
+	padding: 2rem 1rem;
+	color: white;
+}
+
+.site-footer a {
+	color: #2FC0A5;
+}
+
+.site-footer a:hover {
+	color: #81ffe8;
+}
+
+.site-footer .site-info {
+	font-size: 0.9rem;
+}
+
 .logo-container {
-	width: 400px;
+	width: 100%;
 	height: auto;
 }
 
 .logo-container .custom-logo {
-	width: 450px;
+	width: 100%;
 	height: auto;
 	min-width: 100%;
 	max-width: 100%;
@@ -766,6 +855,7 @@ textarea {
 .site-header {
 	background-color: #eee;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+	z-index: 1000;
 }
 
 /* Comments

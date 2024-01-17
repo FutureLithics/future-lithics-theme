@@ -1,0 +1,20 @@
+.site-footer {
+    width: 100vw;
+    position: absolute;
+    bottom: 0px;
+    background-color: $base_coal;
+    padding: 2rem 1rem;
+    color: white;
+
+    a {
+        color: $data_blue;
+
+        &:hover{
+            color: $data_blue_light
+        }
+    }
+
+    .site-info {
+        font-size: 0.9rem
+    }
+}
