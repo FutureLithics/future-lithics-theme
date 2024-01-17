@@ -16,8 +16,17 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main container">
-
+		<div class="d-flex grow h-100">
 		<?php
+		if(is_front_page()) {
+			?>
+			<aside id="sidebar-left" class="widget-area-left p-4">
+				<?php dynamic_sidebar( 'sidebar-2' ); ?>
+			</aside><!-- #secondary -->
+			<?php
+		}
+		?><div class="homepage-posts"><?php
+
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
@@ -49,6 +58,7 @@ get_header();
 
 		endif;
 		?>
+		</div> <!--flex contain -->
 
 	</main><!-- #main -->
 

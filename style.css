@@ -72,6 +72,7 @@ html {
  */
 body {
 	margin: 0;
+	min-height: 100vh;
 }
 
 /**
@@ -627,6 +628,7 @@ textarea {
 	display: grid;
 	grid-template-columns: auto 25%;
 	grid-template-areas: "header header" "main sidebar" "footer footer";
+	min-height: 100vh;
 }
 
 .site-header {
@@ -651,6 +653,39 @@ aside#secondary {
 	background-color: #F5F5F5;
 	padding: 1.5em 0.5em;
 	max-width: 320px;
+}
+
+aside#sidebar-left {
+	padding: 1.5em 0.5em;
+	width: 33.33%;
+}
+
+aside#sidebar-left .widget_block {
+	padding: 1.5em 0.5em;
+	background-color: #F5F5F5;
+	border-radius: 10px;
+	min-height: 40vh;
+	box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+aside#sidebar-left .widget_block .widget-title {
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: #2FC0A5;
+}
+
+aside#sidebar-left .widget_block ul {
+	margin: 0px;
+	margin-left: 0.2rem;
+}
+
+aside#sidebar-left .widget_block ul li {
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.row {
+	--bs-gutter-x: 0;
 }
 
 .no-sidebar .site {
@@ -820,8 +855,6 @@ aside#secondary {
 
 .site-footer {
 	width: 100vw;
-	position: absolute;
-	bottom: 0px;
 	background-color: #414141;
 	padding: 2rem 1rem;
 	color: white;
